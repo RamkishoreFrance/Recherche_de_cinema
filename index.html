@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinémas à Proximité</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+</head>
+<body>
+    <h1>Rechercher des cinémas à proximité</h1>
+
+    <form id="cinema-search-form">
+        <button type="button" id="geolocate-btn">Me géolocaliser</button>
+        
+        <label for="address">Chercher des cinémas proches d'une adresse</label>
+        <input type="search" id="address" placeholder="L'adresse recherchée">
+        
+        <label for="distance">Distance en km</label>
+        <input type="range" id="distance" min="1" max="50" value="10">
+        <span id="range-value">10 km</span>
+
+        <button type="submit">Rechercher</button>
+    </form>
+
+    <!-- Conteneur pour la table -->
+    <table id="cinema-table" style="width:100%; margin-top: 20px; border-collapse: collapse;">
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Adresse</th>
+                <th>Distance</th>
+                <th>Lien</th>
+            </tr>
+        </thead>
+        <tbody id="cinema-list">
+            <!-- Les cinémas s'afficheront ici -->
+        </tbody>
+    </table>
+
+    <!-- Conteneur pour la carte -->
+    <div id="map" style="height: 400px; width: 100%; margin-top: 20px;"></div>
+
+    <!-- Leaflet JavaScript -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+    <!-- Charger le script en tant que module -->
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
